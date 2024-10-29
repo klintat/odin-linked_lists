@@ -68,7 +68,19 @@ class LinkedList {
 		}
 	}
 
-    
+    at(index) {
+		let listIndex = 0;
+		let temp = this.head;
+		while (temp) {
+			if (listIndex === index) {
+				return `Element at index ${index} is ${temp.value}`;
+			} else {
+				temp = temp.nextNode;
+				listIndex += 1;
+			}
+		}
+		return `Element not found @ ${index}!`;
+	}
 }
 
 const list = new LinkedList();
