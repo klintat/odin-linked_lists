@@ -81,6 +81,22 @@ class LinkedList {
 		}
 		return `Element not found @ ${index}!`;
 	}
+
+    pop() {
+        if(!this.head) return 'No elemento to pop!';
+        else if (this.head && !this.head.nextNode) this.head = null;
+        else {
+            let temp = this.head;
+            while(temp) {
+                if (temp.nextNode && temp.nextNode.nextNode)
+					temp = temp.nextNode;
+				else break;
+            }
+            temp.nextNode = null;
+        }
+    }
+
+    
 }
 
 const list = new LinkedList();
