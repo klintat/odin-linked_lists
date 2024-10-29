@@ -106,7 +106,19 @@ class LinkedList {
         return false;
     }
 
-
+    find(value) {
+        let temp = this.head;
+        let index = 0;
+        while(temp) {
+            if (temp.value === value) return `Element at ${index}`;
+			else if (temp.nextNode) {
+                temp = temp.nextNode;
+                index += 1;
+            }
+			else break;
+        }
+        return `Element with ${value} not found!`;
+    }
 }
 
 const list = new LinkedList();
@@ -116,7 +128,7 @@ list.append("cat");
 list.prepend("mice");
 list.append("parrot");
 list.prepend("hamster");
-// list.pop();
+list.pop();
 list.append("snake");
 list.prepend("turtle");
 list.append("spider");
@@ -125,4 +137,5 @@ console.log(list.find("spider"));
 console.log(list.find("sss"));
 console.log(list.find("parrot"));
 console.log(list.find("turtle"));
+
 // export { LinkedList };
