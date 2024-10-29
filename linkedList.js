@@ -51,6 +51,24 @@ class LinkedList {
 		}
 		return count;
 	}
+
+    get listHead() {
+		if (this.head === null) return null;
+		else return this.head.value;
+	}
+
+    get tail() {
+		if (this.head === null) return null;
+		else {
+			let tempNode = this.head;
+			while (tempNode.nextNode) {
+				tempNode = tempNode.nextNode;
+			}
+			return tempNode.value;
+		}
+	}
+
+    
 }
 
 const list = new LinkedList();
