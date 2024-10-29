@@ -29,5 +29,17 @@ class LinkedList {
 		newNode.nextNode = this.head;
 		this.head = newNode;
     }
+
+    toString() {
+		if (this.head === null) return "( ) -> null";
+		let finalString = "";
+		let tempNode = this.head;
+		while (tempNode.nextNode != null) {
+			finalString += `( ${tempNode.value} ) -> `;
+			tempNode = tempNode.nextNode;
+		}
+		finalString += `( ${tempNode.value} ) -> null`;
+		return finalString;
+	}
 }
 
