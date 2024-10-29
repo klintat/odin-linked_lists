@@ -17,10 +17,17 @@ class LinkedList {
         } else {
             const newNode = new Node();
             newNode.value = value;
-            let temp = thos.head;
+            let temp = this.head;
             while (temp.nextNode) temp = temp.nextNode;
             temp.nextNode = newNode;
         }
+    }
+
+    prepend(value) {
+        const newNode = new Node();
+		newNode.value = value;
+		newNode.nextNode = this.head;
+		this.head = newNode;
     }
 }
 
