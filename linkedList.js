@@ -96,7 +96,17 @@ class LinkedList {
         }
     }
 
-    
+    contains(value) {
+        let temp = this.head;
+        while(temp) {
+            if (temp.value === value) return true;
+			else if (temp.nextNode) temp = temp.nextNode;
+			else break;
+        }
+        return false;
+    }
+
+
 }
 
 const list = new LinkedList();
